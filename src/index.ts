@@ -2,8 +2,6 @@ import { Elysia } from "elysia";
 
 const app = new Elysia()
   .get("/", () => {
-    const isValid = true;
-
     return "Hello Elysia";
   })
   .listen(3000);
