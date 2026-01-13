@@ -1,15 +1,25 @@
 {
-  "name": "lms-BE",
+  "name": "lms-be",
   "version": "1.0.50",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "bun run --watch src/index.ts"
+    "dev": "bun run --watch src/index.ts",
+    "prepare": "bunx husky",
+    "lint": "eslint ./src/**/*"
   },
   "dependencies": {
-    "elysia": "latest"
+    "@eslint/js": "^9.39.2",
+    "@prisma/client": "^6.16.0",
+    "elysia": "latest",
+    "eslint": "^9.39.2",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.53.0"
   },
   "devDependencies": {
-    "bun-types": "latest"
+    "@commitlint/cli": "^20.3.1",
+    "@commitlint/config-conventional": "^20.3.1",
+    "bun-types": "latest",
+    "prisma": "^6.16.0"
   },
   "module": "src/index.js"
 }
