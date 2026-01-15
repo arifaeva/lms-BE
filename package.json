@@ -9,16 +9,23 @@
   },
   "dependencies": {
     "@eslint/js": "^9.39.2",
+    "@prisma/adapter-pg": "^7.2.0",
     "@prisma/client": "^7.2.0",
+    "bcrypt": "^6.0.0",
     "elysia": "latest",
     "eslint": "^9.39.2",
+    "inversify": "^7.11.0",
+    "pg": "^8.17.1",
     "prisma": "^7.2.0",
+    "reflect-metadata": "^0.2.2",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.53.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^20.3.1",
     "@commitlint/config-conventional": "^20.3.1",
+    "@types/bcryptjs": "^3.0.0",
+    "@types/pg": "^8.16.0",
     "bun-types": "latest"
   },
   "module": "src/index.js"
