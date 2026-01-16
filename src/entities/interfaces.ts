@@ -1,7 +1,7 @@
 import { User, LoginSession } from "../generated/prisma/client";
 
 export interface IAuthRepository {
-  register(name: string, email: string, password: string): Promise<User | null>;
+  register(name: string, email: string, password: string): Promise<void>;
   login(email: string, password: string): Promise<LoginSession | null>;
 }
 
