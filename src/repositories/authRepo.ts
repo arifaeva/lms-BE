@@ -17,7 +17,7 @@ export class AuthRepo implements IAuthRepository {
 
     const hashedPassword = await bcrypt.hash(password, 12);
 
-    return this.userRepo.createUser(name, email, hashedPassword);
+    await this.userRepo.createUser(name, email, hashedPassword);
   }
 
   async login(email: string, password: string) {
