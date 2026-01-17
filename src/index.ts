@@ -1,9 +1,10 @@
 import { Elysia } from "elysia";
+import { authRouter } from "./router/auth";
+import { userRouter } from "./router/user";
 
 const app = new Elysia()
-  .get("/", () => {
-    return "Hello Elysia";
-  })
+
+  .group("/v1", (app) => app.use(authRouter).use(userRouter))
   .listen(3000);
 
 console.log(
