@@ -17,13 +17,6 @@ export class AuthServices {
     }
 
     await this.authRepo.register(name, email, password);
-    // if (!user) return null;
-
-    // return {
-    //   id: user.id,
-    //   email: user.email,
-    //   name: user.name,
-    // };
   }
 
   async login(email: string, password: string) {
