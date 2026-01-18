@@ -4,9 +4,9 @@ import { userRouter } from "./router/user";
 
 const app = new Elysia()
 
-  .group("/v1", (app) => app.use(authRouter).use(userRouter))
+  .group("api/v1", (app) => app.use(authRouter).use(userRouter))
   .listen(3000);
 
 console.log(
-  `🦊 Elysia is running at ${app.server?.hostname}:${app.server?.port}`
+  `🦊 Elysia is running at ${app.server?.hostname}:${app.server?.port}`,
 );
