@@ -8,6 +8,7 @@
     "lint": "eslint ./src/**/*"
   },
   "dependencies": {
+    "@elysiajs/cors": "^1.4.1",
     "@eslint/js": "^9.39.2",
     "@prisma/adapter-pg": "^7.2.0",
     "@prisma/client": "^7.2.0",
