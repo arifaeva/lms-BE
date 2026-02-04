@@ -41,4 +41,23 @@ export class AuthRepo implements IAuthRepository {
       },
     });
   }
+
+  async validateSession(sessionId: string) {
+    const session = await prisma.loginSession.findUnique({
+      where: { id: sessionId },
+      include: { user: true },
+    });
+
+    if (!session) return null;
+
+    if (session.expiration < new Date()) {
+      await prisma.loginSession.delete({
+        where: { id: sessionId },
+      });
+
+      return null;
+    }
+
+    return session.user;
+  }
 }
