@@ -36,4 +36,18 @@ export class AuthServices {
       expiration: session.expiration,
     };
   }
+
+  async validate(sessionId: string) {
+    if (!sessionId) {
+      throw new Error("No session id");
+    }
+
+    const user = await this.authRepo.validateSession(sessionId);
+
+    if (!user) {
+      throw new Error("Invalid or expired session");
+    }
+
+    return user;
+  }
 }
