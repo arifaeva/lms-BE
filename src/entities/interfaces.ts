@@ -3,6 +3,7 @@ import { User, LoginSession } from "../generated/prisma/client";
 export interface IAuthRepository {
   register(name: string, email: string, password: string): Promise<void>;
   login(email: string, password: string): Promise<LoginSession | null>;
+  validateSession(sessionId: string): Promise<User | null>;
 }
 
 export interface IUserRepository {
@@ -12,7 +13,7 @@ export interface IUserRepository {
   createUser(
     name: string,
     email: string,
-    password: string
+    password: string,
   ): Promise<User | null>;
   createStudent(email: string): Promise<User | null>;
 }
